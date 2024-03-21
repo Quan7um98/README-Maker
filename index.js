@@ -6,55 +6,55 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 
 const questions = [
-    inquirer
-        .prompt([
-            {
-                type: 
-                message: 
-                name: 'title',
-            },
-            {
-                type: 
-                message: 
-                name: 'description',
-            },
-            {
-                type: 
-                message: 
-                name: 'tableOfContents',
-            },
-            {
-                type: 
-                message: 
-                name: 'installation',
-            },
-            {
-                type: 
-                message: 
-                name: 'usage',
-            },
-            {
-                type: 
-                message: 
-                name: 'licence',
-            },
-            {
-                type: 
-                message: 
-                name: 'contributing',
-            },
-            {
-                type: 
-                message: 
-                name: 'tests',
-            },
-            {
-                type: 
-                message: 
-                name: 'questions',
-            },
+    inquirer.prompt([
+        {
+            type: input,
+            message: 'Enter the project title:',
+            name: 'title',
+        },
+        {
+            type: input,
+            message: 'Describe the project:',
+            name: 'description',
+        },
+        {
+            type: input,
+            message: 'Enter installation instructions:',
+            name: 'installation',
+        },
+        {
+            type: input,
+            message: 'Enter usage information:',
+            name: 'usage',
+        },
+        {
+            type: list,
+            message: 'Choose a license:',
+            name: 'licence',
+            choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None']
+        },
+        {
+            type: input,
+            message: 'Enter contribution guidelines:',
+            name: 'contributing',
+        },
+        {
+            type: input,
+            message: 'Enter test instructions',
+            name: 'tests',
+        },
+        {
+            type: input,
+            message: 'Enter your Github username',
+            name: 'user',
+        },
+        {
+            type: input,
+            message: 'Enter your email',
+            name: 'email',
+        },
 
-        ])
+    ])
 ];
 
 // TODO: Create a function to write README file
