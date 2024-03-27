@@ -40,8 +40,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return `## License
-    
+    return `
     This project is licensed under the ${license} license. For more information, see the link below:
     ${renderLicenseLink(license)}`;
   } else {
@@ -51,8 +50,39 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+  # ${data.title}
 
+  ${renderLicenseBadge(data.license)}
+  
+  ## Description
+  ${data.description}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  ${data.license !== 'None' ? '- [License](#license)' : ''}
+  
+  ## Installation
+  ${data.installation}
+  
+  ## Usage
+  ${data.usage}
+  
+  ## Contributing
+  ${data.contributing}
+  
+  ## Tests
+  ${data.tests}
+  
+  ## Questions
+  If you have any questions about the project, please open an issue at my Github ${data.user} or contact me directly at ${data.email}.
+  
+  ## License
+  ${renderLicenseSection(data.license)}
 `;
 }
 
