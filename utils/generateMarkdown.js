@@ -40,7 +40,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return `
+    return `## License
     This project is licensed under the ${license} license. For more information, see the link below:
     ${renderLicenseLink(license)}`;
   } else {
@@ -81,7 +81,6 @@ function generateMarkdown(data) {
   ## Questions
   If you have any questions about the project, please open an issue at my Github ${data.user} or contact me directly at ${data.email}.
   
-  ## License
   ${renderLicenseSection(data.license)}
 `;
 }
